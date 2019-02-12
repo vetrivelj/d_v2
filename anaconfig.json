@@ -1,4 +1,6 @@
 [{
+    "name" : "JDE using AWS",
+    "description" : "na",
     "intent": ["JDE_creditlimit", "JDE_creditlimit_name", "JDE_creditlimit_follow"],
     "invoke": ["input", "mssql", "output"],
     "output": {
@@ -13,7 +15,10 @@
         "database": "viki"
     },
     "folder": "jde"
-},{
+},
+ {
+    "name" : "EPM",
+    "description" : "na",
     "intent": ["EPM_MDXQuery","EPM_JobStatus","EPM_Jobs","EPM_Jobs - custom"],
     "invoke": ["input", "rest", "output"],
     "webservice": {
@@ -22,15 +27,43 @@
         "user": "ZXBtX2RlZmF1bHRfY2xvdWRfYWRtaW46ZXBtRGVtMHM="
     },
     "folder": "epm"
-}, {
-    "invoke": ["output"],
+},
+ {
+    "name" : "JDE using JDE",
+    "description" : "na",
+    "intent": ["test"],
+    "invoke": ["input", "soap", "output"],
+    "output": {
+        "variable": {
+            "level": 1
+        }
+    },  
+    "webservice": {
+        "host": "10.151.66.5",
+        "port": "8004",
+        "user": "jde",
+        "password": "jde",
+        "wsdl" : "/DV920/CustomerManager?WSDL"
+    },
+    "folder": "jdev2"
+}, 
+ {
+    "name" : "Welcome intent - select applciation",
+    "description" : "na",
     "intent": ["Default Welcome Intent", "Default Welcome Intent_application"],
+    "invoke": ["output"],
     "folder": "appSelect"
-}, {
-    "invoke": ["sendEmail"],
-    "intent": ["ADS_HyperionReport","reporting"],
-    "folder": "report"
-}, {
+}, 
+ {
+     "name" : "Reporting",
+     "description" : "na",
+     "intent": ["ADS_HyperionReport","reporting"],
+     "invoke": ["sendEmail"],
+     "folder": "report"
+}, 
+ {
+     "name" : "Dismiss to reset contexts",
+    "description" : "na",
     "invoke": ["dismiss"],
     "intent": ["smalltalk.confirmation.cancel"],
     "folder": "generic"
