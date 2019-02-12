@@ -5,7 +5,7 @@ module.exports = function( index, inputInvoke, anaConfig, req, res) {
         
         var Invoker;
         if( anaConfig.invoke[index] == "rest" || anaConfig.invoke[index] == "soap" || anaConfig.invoke[index] == "mssql" ){
-            Invoker = require("../webservice/" + anaConfig.invoke[index] );
+            Invoker = require("./webservice/" + anaConfig.invoke[index] );
         }else{
             Invoker = require("./" + anaConfig.folder + "/" + anaConfig.invoke[index] );
         }
