@@ -1,0 +1,44 @@
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #136fad;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 1.5s linear infinite;
+    margin: 10% 45%;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.container{
+    margin-top: 150px;
+    margin: 65px 0 0 0;
+    padding: 0;
+    line-height: 0px;
+}
+
+.bg-dark {
+    background-color: #1e4a6d !important;
+}
+
+
+.edit{
+    width: 80%
+}
+
+#selectRecord:hover {
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.table-striped{
+    line-height: 1.6 !important;
+}

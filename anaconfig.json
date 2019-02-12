@@ -1,0 +1,37 @@
+[{
+    "intent": ["JDE_creditlimit", "JDE_creditlimit_name", "JDE_creditlimit_follow"],
+    "invoke": ["input", "mssql", "output"],
+    "output": {
+        "variable": {
+            "level": 1
+        }
+    },
+    "webservice": {
+        "user": "viki",
+        "password": "Oracle123",
+        "server": "vikisql.c1abev5luwmn.us-west-1.rds.amazonaws.com",
+        "database": "viki"
+    },
+    "folder": "jde"
+},{
+    "intent": ["EPM_MDXQuery","EPM_JobStatus","EPM_Jobs","EPM_Jobs - custom"],
+    "invoke": ["input", "rest", "output"],
+    "webservice": {
+        "host": "epbcs190141-epbcs-bjdn8pft.srv.ravcloud.com",
+        "port": "9000",
+        "user": "ZXBtX2RlZmF1bHRfY2xvdWRfYWRtaW46ZXBtRGVtMHM="
+    },
+    "folder": "epm"
+}, {
+    "invoke": ["output"],
+    "intent": ["Default Welcome Intent", "Default Welcome Intent_application"],
+    "folder": "appSelect"
+}, {
+    "invoke": ["sendEmail"],
+    "intent": ["ADS_HyperionReport","reporting"],
+    "folder": "report"
+}, {
+    "invoke": ["dismiss"],
+    "intent": ["smalltalk.confirmation.cancel"],
+    "folder": "generic"
+}]
