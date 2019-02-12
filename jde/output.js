@@ -12,7 +12,7 @@ module.exports = function(response, anaConfig, req, res, callback) {
 
         var SendResponse = require("../sendResponse");
 
-        var Webservice = require("../webservice/rest");
+        var Webservice = require("../webservice/mssql");
         var Output = require("./output")
 
         var qString = "";
