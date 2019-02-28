@@ -21,7 +21,7 @@ app.config(function($routeProvider) {    $routeProvider
 
 app.controller('mainCont', function($scope, $http, $location) {
     console.log("This is Main Controller!");
-    $scope.getHome();
+    
 //    $location.path('\loading');
 //    $http({
 //            method: 'GET',
@@ -47,6 +47,9 @@ app.controller('mainCont', function($scope, $http, $location) {
                 $location.path('\/');
             });
     }
+    
+    $scope.getHome();
+    
     $scope.getEdit = function(custNum){
         console.log("Num : " + custNum);
         $location.path('\loading');
