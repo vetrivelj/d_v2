@@ -3,7 +3,7 @@
 
 <head>
     <title>Aura</title>
-    
+
     <link rel="icon" type="image/x-icon" href="src/images/unnamed.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="src/css/mystyle.css">
@@ -13,52 +13,51 @@
 
 <body ng-app="MyApp" ng-Controller="mainCont">
     <nav class="navbar navbar-expand-md fixed-top" style="background-color: #1e4a6d">
-      <a href="#/"><img src="./src/images/jde.png" alt="jde"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <a href="#/"><img src="./src/images/jde.png" alt="jde"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#/"><img src="./src/images/nav.png"></a>
-          </li>
-          
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/"><img src="./src/images/nav.png"></a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
     </nav>
     <div class="head">
-    <div class="col-md-12" style="background-color: #f2f2f2 !important;">
+        <div class="col-md-12" style="background-color: #f2f2f2 !important;">
             <h4 style="line-height: 35px;">Customer Service Enquiry</h4>
         </div>
         <div style="background-color: #ffffff !important; padding-left: 5px;">
             <a href="#/"><img src="src/images/keys.png"></a>
         </div>
-        
+
         <div class="col-md-12" style="background-color: #f2f2f2 !important; line-height: 15px;font-weight: 500;font-size: 20px;">
             <ul class="nav nav-tabs" id="myTab" role="tablist" style="cursor: pointer">
-              <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" ng-click="getHome()" style="color: #1a72ce; border-top: 3px solid #1e4a6d;">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" role="tab" aria-controls="profile" aria-selected="false" ng-click="getGit()" style="color: #1a72ce; border-top: 3px solid #1e4a6d;">Git</a>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" ng-click="getHome()" style="color: #1a72ce; border-top: 3px solid #1e4a6d;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" role="tab" aria-controls="profile" aria-selected="false" ng-click="getGit()" style="color: #1a72ce; border-top: 3px solid #1e4a6d;">Git</a>
+                </li>
             </ul>
         </div>
-    
+
     </div>
     <div class="home" ng-view></div>
     <main role="main" class="container">
     </main>
 
-    
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
     <!--         <script type="text/javascript" src="/node_modules/angular/angular.js"></script>-->
