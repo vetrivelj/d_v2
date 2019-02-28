@@ -7,8 +7,8 @@ app.config(function($routeProvider) {    $routeProvider
 .when("/", {
         templateUrl : "home.html"
     })
-.when("/login", {
-        templateUrl : "login.html"
+.when("/git", {
+        templateUrl : "git.html"
     })
 .when("/edit", {
         templateUrl : "edit.html"
@@ -22,18 +22,6 @@ app.config(function($routeProvider) {    $routeProvider
 app.controller('mainCont', function($scope, $http, $location) {
     console.log("This is Main Controller!");
     
-//    $location.path('\loading');
-//    $http({
-//            method: 'GET',
-////            url: 'http://localhost:9000/getCust'
-//        url: 'https://subscrib.herokuapp.com/getCust' 
-//            
-//        }).then(function (response) {
-//            console.log("Response : " + JSON.stringify(response.data[0]));
-//            $scope.custs = response.data[0];
-//            $location.path('\/');
-//        });
-    
     $scope.getHome = function(){
         $location.path('\loading');
             $http({
@@ -46,6 +34,10 @@ app.controller('mainCont', function($scope, $http, $location) {
                 $scope.custs = response.data[0];
                 $location.path('\/');
             });
+    }
+    
+    $scope.getHome = function(){
+        $location.path('\git');
     }
     
     $scope.getHome();
