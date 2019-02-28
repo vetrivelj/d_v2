@@ -18,17 +18,11 @@
   100% { transform: rotate(360deg); }
 }
 
-.container{
-    margin-top: 150px;
+.head{
     margin: 65px 0 0 0;
-    padding: 0;
+    padding: 0 !important;
     line-height: 0px;
 }
-
-.bg-dark {
-    background-color: #1e4a6d !important;
-}
-
 
 .edit{
     width: 80%
