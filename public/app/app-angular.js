@@ -36,7 +36,7 @@ app.controller('mainCont', function($scope, $http, $location) {
             });
     }
     
-    $scope.getHome = function(){
+    $scope.getGit = function(){
         $location.path('\git');
     }
     
