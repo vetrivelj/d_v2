@@ -21,18 +21,32 @@ app.config(function($routeProvider) {    $routeProvider
 
 app.controller('mainCont', function($scope, $http, $location) {
     console.log("This is Main Controller!");
-    $location.path('\loading');
-    $http({
-            method: 'GET',
-//            url: 'http://localhost:9000/getCust'
-        url: 'https://subscrib.herokuapp.com/getCust' 
-            
-        }).then(function (response) {
-            console.log("Response : " + JSON.stringify(response.data[0]));
-            $scope.custs = response.data[0];
-            $location.path('\/');
-        });
+    $scope.getHome();
+//    $location.path('\loading');
+//    $http({
+//            method: 'GET',
+////            url: 'http://localhost:9000/getCust'
+//        url: 'https://subscrib.herokuapp.com/getCust' 
+//            
+//        }).then(function (response) {
+//            console.log("Response : " + JSON.stringify(response.data[0]));
+//            $scope.custs = response.data[0];
+//            $location.path('\/');
+//        });
     
+    $scope.getHome = function(){
+        $location.path('\loading');
+            $http({
+                method: 'GET',
+    //            url: 'http://localhost:9000/getCust'
+            url: 'https://subscrib.herokuapp.com/getCust' 
+
+            }).then(function (response) {
+                console.log("Response : " + JSON.stringify(response.data[0]));
+                $scope.custs = response.data[0];
+                $location.path('\/');
+            });
+    }
     $scope.getEdit = function(custNum){
         console.log("Num : " + custNum);
         $location.path('\loading');
