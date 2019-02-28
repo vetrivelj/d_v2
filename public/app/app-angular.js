@@ -23,6 +23,7 @@ app.controller('mainCont', function($scope, $http, $location) {
     console.log("This is Main Controller!");
     
     $scope.getHome = function(){
+        console.log("Home");
         $location.path('\loading');
             $http({
                 method: 'GET',
@@ -30,13 +31,14 @@ app.controller('mainCont', function($scope, $http, $location) {
             url: 'https://subscrib.herokuapp.com/getCust' 
 
             }).then(function (response) {
-                console.log("Response : " + JSON.stringify(response.data[0]));
+                //console.log("Response : " + JSON.stringify(response.data[0]));
                 $scope.custs = response.data[0];
                 $location.path('\/');
             });
     }
     
     $scope.getGit = function(){
+        console.log("Git");
         $location.path('\git');
     }
     
