@@ -28,7 +28,7 @@
     width: 80%
 }
 
-#selectRecord:hover {
+.selectRecord:hover {
     cursor: pointer;
     transition: 0.5s;
 }

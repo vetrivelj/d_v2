@@ -1,4 +1,5 @@
 [{
+    "id":1,
     "name" : "JDE using AWS",
     "description" : "na",
     "intent": ["JDE_creditlimit", "JDE_creditlimit_name", "JDE_creditlimit_follow"],
@@ -17,6 +18,7 @@
     "folder": "jde"
 },
  {
+     "id":2,
     "name" : "EPM",
     "description" : "na",
     "intent": ["EPM_MDXQuery","EPM_JobStatus","EPM_Jobs","EPM_Jobs - custom"],
@@ -29,7 +31,8 @@
     "folder": "epm"
 },
  {
-    "name" : "JDE using JDE",
+    "id":3,
+     "name" : "JDE using JDE",
     "description" : "na",
     "intent": ["test"],
     "invoke": ["input", "soap", "output"],
@@ -48,13 +51,15 @@
     "folder": "jdev2"
 }, 
  {
-    "name" : "Welcome intent - select applciation",
+    "id":4,
+     "name" : "Welcome intent - select applciation",
     "description" : "na",
     "intent": ["Default Welcome Intent", "Default Welcome Intent_application"],
     "invoke": ["output"],
     "folder": "appSelect"
 }, 
  {
+     "id":5,
      "name" : "Reporting",
      "description" : "na",
      "intent": ["ADS_HyperionReport","reporting"],
@@ -62,7 +67,8 @@
      "folder": "report"
 }, 
  {
-     "name" : "Dismiss to reset contexts",
+    "id":6,
+    "name" : "Dismiss to reset contexts",
     "description" : "na",
     "invoke": ["dismiss"],
     "intent": ["smalltalk.confirmation.cancel"],

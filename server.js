@@ -54,6 +54,7 @@ restService.use(function(req, res, next) {
 });
 
 var uiDB = require("./jdeuidb");
+var getConsole = require("./console");
 
 var qString = "";
 restService.get('/getCust', function(req, res) {
@@ -63,6 +64,20 @@ restService.get('/getCust', function(req, res) {
         //sadasda
         uiDB(qString, req, res, function(result) {
             res.json(result.recordsets);
+        });
+    } catch (e) {
+        console.log("Error : " + e);
+    }
+
+});
+
+restService.get('/console', function(req, res) {
+    req.body.headers = req.headers;
+    qString = "/repos/vetrivelj/d_v2/contents/anaconfig.json"
+    try {
+        getConsole(qString, req, res, function(result) {
+            var output = result;
+            res.json(result);
         });
     } catch (e) {
         console.log("Error : " + e);

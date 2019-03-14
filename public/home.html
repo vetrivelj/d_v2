@@ -27,7 +27,7 @@
         <tbody>
             <tr ng-repeat="cust in custs | filter:searchCustName">
                 <td scope="row">{{cust.CustNum}}</td>
-                <td id="selectRecord" style="color: #1a72ce" ng-click="getEdit(cust.CustNum)"><a>{{cust.CustName}}</a></td>
+                <td class="selectRecord" style="color: #1a72ce" ng-click="getEdit(cust.CustNum)"><a>{{cust.CustName}}</a></td>
                 <td>{{cust.credit}}</td>
                 <td>{{cust.exposure}}</td>
             </tr>
