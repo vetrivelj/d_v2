@@ -14,6 +14,9 @@ app.config(function($routeProvider) {
         .when("/edit", {
             templateUrl: "edit.html"
         })
+        .when("/editcase", {
+            templateUrl: "editcase.html"
+        })
         .when("/loading", {
             templateUrl: "loading.html"
         });
@@ -48,15 +51,32 @@ app.controller('mainCont', function($scope, $http, $location) {
 //            url: 'https://subscrib.herokuapp.com/console'
 
         }).then(function(response) {
-            console.log("Response : " + JSON.stringify(response.data[0]));
-            $scope.cases = response.data[0];
+            console.log("Response : " + JSON.stringify(response.data));
+            $scope.cases = response.data;
             $location.path('\/');
         });
         
-        //$scope.cases = [{"id":1,"name":"JDE using AWS","description":"JDE using AWS rds","intent":["JDE_creditlimit","JDE_creditlimit_name","JDE_creditlimit_follow"],"invoke":["input","mssql","output"],"output":{"variable":{"level":1}},"webservice":{"user":"viki","password":"Oracle123","server":"vikisql.c1abev5luwmn.us-west-1.rds.amazonaws.com","database":"viki"},"folder":"jde"},{"id":2,"name":"EPM","description":"na","intent":["EPM_MDXQuery","EPM_JobStatus","EPM_Jobs","EPM_Jobs - custom"],"invoke":["input","rest","output"],"webservice":{"host":"epbcs190141-epbcs-bjdn8pft.srv.ravcloud.com","port":"9000","user":"ZXBtX2RlZmF1bHRfY2xvdWRfYWRtaW46ZXBtRGVtMHM="},"folder":"epm"},{"id":3,"name":"JDE using JDE","description":"na","intent":["test"],"invoke":["input","soap","output"],"output":{"variable":{"level":1}},"webservice":{"host":"10.151.66.5","port":"8004","user":"jde","password":"jde","wsdl":"/DV920/CustomerManager?WSDL"},"folder":"jdev2"},{"id":4,"name":"Welcome intent - select applciation","description":"na","intent":["Default Welcome Intent","Default Welcome Intent_application"],"invoke":["output"],"folder":"appSelect"},{"id":5,"name":"Reporting","description":"na","intent":["ADS_HyperionReport","reporting"],"invoke":["sendEmail"],"folder":"report"},{"id":6,"name":"Dismiss to reset contexts","description":"na","invoke":["dismiss"],"intent":["smalltalk.confirmation.cancel"],"folder":"generic"}];
-        
     }
     $scope.getConsole();
+    
+    $scope.getCase = function(varcase) {
+        console.log("Num : " + varcase);
+        $location.path('\loading');
+        $http({
+            method: 'POST',
+                        url: 'http://localhost:9000/getcase/',
+//            url: 'https://subscrib.herokuapp.com/getcase/',
+            data: varcase
+
+
+        }).then(function(response) {
+            console.log("Response : " + JSON.stringify(response.data));
+            $scope.inputjs = response.data.inputjs;
+            $scope.outputjs = response.data.outputjs;
+            $location.path('\editcase');
+        });
+
+    }
 
     $scope.getEdit = function(custNum) {
         console.log("Num : " + custNum);

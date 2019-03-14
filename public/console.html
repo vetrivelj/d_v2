@@ -25,7 +25,7 @@
         <tbody>
             <tr ng-repeat="case in cases | filter:searchName">
                 <td scope="row">{{case.id}}</td>
-                <td class="selectRecord" style="color: #1a72ce" ng-click="getCase(case.name)"><a>{{case.name}}</a></td>
+                <td class="selectRecord" style="color: #1a72ce" ng-click="getCase(case)"><a>{{case.name}}</a></td>
                 <td scope="row">{{case.description}}</td>
             </tr>
 

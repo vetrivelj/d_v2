@@ -76,14 +76,36 @@ restService.get('/console', function(req, res) {
     qString = "/repos/vetrivelj/d_v2/contents/anaconfig.json"
     try {
         getConsole(qString, req, res, function(result) {
-            var output = result;
-            res.json(result);
+            res.json(JSON.parse(result));
         });
     } catch (e) {
         console.log("Error : " + e);
     }
 
 });
+
+restService.post('/getcase', function(req, res) {
+    var varcase = req.body;
+    console.log("Num : " + varcase.id);
+    console.log("Name : " + varcase.name + ", " + varcase.description);
+    qString = "/repos/vetrivelj/d_v2/contents/" + varcase.folder + "/input.js";
+    try {
+        var output = {};
+        getConsole(qString, req, res, function(result) {
+            output.inputjs= result;
+            qString = "/repos/vetrivelj/d_v2/contents/" + varcase.folder + "/output.js";
+            getConsole(qString, req, res, function(result1) {
+                output.outputjs= result1;
+                console.log(JSON.stringify(output))
+                res.json(output);
+            });
+        });
+        
+    } catch (e) {
+        console.log("Error : " + e);
+    }
+});
+
 
 restService.get('/edit/:custNum', function(req, res) {
     var custNum = req.params.custNum;

@@ -28,6 +28,11 @@
     width: 80%
 }
 
+.logic{
+    min-width: 1000px;
+    min-height: 500px
+}
+
 .selectRecord:hover {
     cursor: pointer;
     transition: 0.5s;

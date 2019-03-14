@@ -7,26 +7,25 @@ module.exports = function ( qString, req, resp, callback){
       "port": null,
       "path": qString,// "/repos/vetrivelj/d_v2/contents/anaconfig.json",
       "headers": {
-        "cache-control": "no-cache"
+        "cache-control": "no-cache",
+          "user-agent": "node.js"
       }
     };
 
     var req = http.request(options, function (res) {
-      var chunks = [];
+      var body = "";
 
       res.on("data", function (chunk) {
-        chunks.push(chunk);
+        body += chunk.toString('utf8');
       });
 
       res.on("end", function () {
-          var body = Buffer.concat(chunks);
-          console.log("Encode Str - " + body.toString());
-          var strBody = body.toString();
-          strBody.replace("\n", "")
-          var buff = new Buffer(strBody, 'base64');  
-          var text = buff.toString('ascii');
-          console.log("Decode Str - " + text);
-          callback( JSON.parse(text) );
+          var objResult = JSON.parse(body);
+          var content = objResult.content;
+          content.replace("\n", "")
+          var buff = Buffer.from( content, 'base64').toString('ascii')  
+          console.log("Decode Str - " + buff);
+          callback( buff );
       });
     });
 

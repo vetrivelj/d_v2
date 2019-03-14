@@ -1,0 +1,26 @@
+<div class="col-md-12">
+    <form style="padding: 5% 15%;">
+        
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Input Logic</label>
+                <textarea type="text" class="form-control edit logic" ng-model="inputjs"/>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Output Logic</label>
+                <textarea type="text" class="form-control edit logic" ng-model="outputjs"/>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-auto">
+                <button type="button" class="btn btn-primary" ng-click="save(editCust)">Save</button>
+            </div>
+            <div class="col-md-auto">
+                <button type="button" class="btn btn-primary" ng-click="cancel()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
