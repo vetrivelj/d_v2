@@ -1,4 +1,12 @@
 [{
+    "id":0,
+     "name" : "Console",
+    "description" : "na",
+    "intent": ["Console Configuration"],
+    "invoke": ["console"],
+    "folder": "console"
+},
+ {
     "id":1,
     "name" : "JDE using AWS",
     "description" : "na",

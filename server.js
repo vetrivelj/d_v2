@@ -54,7 +54,7 @@ restService.use(function(req, res, next) {
 });
 
 var uiDB = require("./jdeuidb");
-var getConsole = require("./console");
+var getConsole = require("./console/console");
 
 var qString = "";
 restService.get('/getCust', function(req, res) {
@@ -88,17 +88,38 @@ restService.post('/getcase', function(req, res) {
     var varcase = req.body;
     console.log("Num : " + varcase.id);
     console.log("Name : " + varcase.name + ", " + varcase.description);
-    qString = "/repos/vetrivelj/d_v2/contents/" + varcase.folder + "/input.js";
+    
+    var listConfig = fs.readFileSync("./anaconfig.json", 'utf8');
+    var invoke = [];
+    //console.log("COntent : " + listConfig)
+    listConfig = JSON.parse(listConfig);
+
+    for (var i = 0; i < listConfig.length; i++) {
+        if (listConfig[i].id == varcase.id ) {
+            invoke = listConfig[i].invoke;
+            break;
+        }
+    }
+    
+    qString = "/repos/vetrivelj/d_v2/contents/" + varcase.folder + "/" + invoke[0] + ".js";
     try {
         var output = {};
         getConsole(qString, req, res, function(result) {
-            output.inputjs= result;
-            qString = "/repos/vetrivelj/d_v2/contents/" + varcase.folder + "/output.js";
-            getConsole(qString, req, res, function(result1) {
-                output.outputjs= result1;
+            output[invoke[0]]= result;
+            if( invoke.length > 1){
+                qString = "/repos/vetrivelj/d_v2/contents/" + varcase.folder + "/" + invoke[1] + ".js";
+                getConsole(qString, req, res, function(result1) {
+                     output[invoke[1]] = result1;
+                    console.log(JSON.stringify(output))
+                    res.json(output);
+                });
+            }
+            else{
+                output[invoke[1]] = "";
                 console.log(JSON.stringify(output))
                 res.json(output);
-            });
+            }
+            
         });
         
     } catch (e) {

@@ -47,8 +47,8 @@ app.controller('mainCont', function($scope, $http, $location) {
         $location.path('\loading');
         $http({
             method: 'GET',
-                        url: 'http://localhost:9000/console'
-//            url: 'https://subscrib.herokuapp.com/console'
+//                        url: 'http://localhost:9000/console'
+            url: 'https://subscrib.herokuapp.com/console'
 
         }).then(function(response) {
             console.log("Response : " + JSON.stringify(response.data));
@@ -64,15 +64,17 @@ app.controller('mainCont', function($scope, $http, $location) {
         $location.path('\loading');
         $http({
             method: 'POST',
-                        url: 'http://localhost:9000/getcase/',
-//            url: 'https://subscrib.herokuapp.com/getcase/',
+//                        url: 'http://localhost:9000/getcase/',
+            url: 'https://subscrib.herokuapp.com/getcase/',
             data: varcase
 
 
         }).then(function(response) {
             console.log("Response : " + JSON.stringify(response.data));
-            $scope.inputjs = response.data.inputjs;
-            $scope.outputjs = response.data.outputjs;
+            $scope.inputjs = response.data.input;
+            $scope.outputjs = response.data.output;
+            $scope.miscjs = response.data.dismiss;
+            
             $location.path('\editcase');
         });
 

@@ -11,7 +11,7 @@ module.exports = function ( qString, req, resp, callback){
           "user-agent": "node.js"
       }
     };
-
+console.log("Body : " + JSON.stringify(options));
     var req = http.request(options, function (res) {
       var body = "";
 
@@ -20,11 +20,11 @@ module.exports = function ( qString, req, resp, callback){
       });
 
       res.on("end", function () {
+          //console.log("Body : " + body);
           var objResult = JSON.parse(body);
           var content = objResult.content;
           content.replace("\n", "")
           var buff = Buffer.from( content, 'base64').toString('ascii')  
-          console.log("Decode Str - " + buff);
           callback( buff );
       });
     });
