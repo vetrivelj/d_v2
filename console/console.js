@@ -20,7 +20,7 @@ console.log("Body : " + JSON.stringify(options));
       });
 
       res.on("end", function () {
-          //console.log("Body : " + body);
+          console.log("Body : " + body);
           var objResult = JSON.parse(body);
           var content = objResult.content;
           content.replace("\n", "")

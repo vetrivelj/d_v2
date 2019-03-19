@@ -107,6 +107,8 @@ restService.post('/getcase', function(req, res) {
         getConsole(qString, req, res, function(result) {
             output[invoke[0]]= result;
             if( invoke.length > 1){
+                if(invoke[1] == "mssql" || invoke[1] == "rest" || invoke[1] == "soap" )
+                   invoke[1] = "output";
                 qString = "/repos/vetrivelj/d_v2/contents/" + varcase.folder + "/" + invoke[1] + ".js";
                 getConsole(qString, req, res, function(result1) {
                      output[invoke[1]] = result1;
