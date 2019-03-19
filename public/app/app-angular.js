@@ -32,7 +32,7 @@ app.controller('mainCont', function($scope, $http, $location) {
         $http({
             method: 'GET',
             //            url: 'http://localhost:9000/getCust'
-            url: 'https://subscrib.herokuapp.com/getCust'
+            url: 'https://dv2.herokuapp.com/getCust'
 
         }).then(function(response) {
             //console.log("Response : " + JSON.stringify(response.data[0]));
@@ -48,7 +48,7 @@ app.controller('mainCont', function($scope, $http, $location) {
         $http({
             method: 'GET',
 //                        url: 'http://localhost:9000/console'
-            url: 'https://subscrib.herokuapp.com/console'
+            url: 'https://dv2.herokuapp.com/console'
 
         }).then(function(response) {
             console.log("Response : " + JSON.stringify(response.data));
@@ -65,7 +65,7 @@ app.controller('mainCont', function($scope, $http, $location) {
         $http({
             method: 'POST',
 //                        url: 'http://localhost:9000/getcase/',
-            url: 'https://subscrib.herokuapp.com/getcase/',
+            url: 'https://dv2.herokuapp.com/getcase/',
             data: varcase
 
 
@@ -86,7 +86,7 @@ app.controller('mainCont', function($scope, $http, $location) {
         $http({
             method: 'GET',
             //            url: 'http://localhost:9000/edit/' + custNum
-            url: 'https://subscrib.herokuapp.com/edit/' + custNum
+            url: 'https://dv2.herokuapp.com/edit/' + custNum
 
         }).then(function(response) {
             console.log("Response : " + JSON.stringify(response.data[0]));
@@ -102,7 +102,7 @@ app.controller('mainCont', function($scope, $http, $location) {
         $http({
             method: 'POST',
             //            url: 'http://localhost:9000/save',
-            url: 'https://subscrib.herokuapp.com/save',
+            url: 'https://dv2.herokuapp.com/save',
             data: cust
 
 
